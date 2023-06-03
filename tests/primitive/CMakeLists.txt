@@ -1,0 +1,4 @@
+add_executable(test_bytes_array TestBytesArray.cpp)
+target_link_libraries(test_bytes_array GTest::gtest_main)
+
+gtest_discover_tests(test_bytes_array)
