@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,3 +32,8 @@ jobs:
       - name: Try to build binary
         shell: bash
         run: cmake --build build/Debug
+
+      - name: Try to test
+        run: |
+          cd build/Debug
+          ctest
