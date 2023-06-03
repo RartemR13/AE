@@ -29,4 +29,5 @@ jobs:
             message(FATAL_ERROR "Bad exit status")
           endif ()
           
-          cmake --build build/Debug
+        shell: bash
+        run: cmake --build build/Debug
