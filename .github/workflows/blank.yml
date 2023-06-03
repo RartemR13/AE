@@ -36,8 +36,17 @@ jobs:
           echo test, and deploy your project.
 
       - name: Try to build
+        shell: cmake -P {0}
         run: |
-          
-          cmake build/Debug -DCMAKE_BUILD_TYPE=Debug ./
-          cmake --build build/Debug
+          execute_process(
+            COMMAND cmake
+              -S .
+              -B build/Debug
+              -D CMAKE_BUILD_TYPE=Debug
+            RESULT_VARIABLE cmake_result
+          )
+
+          if (NOT cmake_result EQUAL 0)
+            message(FATAL_ERROR "Bad exit status")
+          endif ()
           
