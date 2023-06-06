@@ -9,6 +9,6 @@ jobs:
     - name: check src
       uses: jidicula/clang-format-action@v4.11.0
       with:
-        clang-format-version: '15'
+        clang-format-version: '14'
         check-path: 'src'
         fallback-style: 'Google'
