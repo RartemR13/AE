@@ -2,7 +2,6 @@
 
 #include <cstring>
 #include <initializer_list>
-#include <iostream>
 
 namespace ae {
 namespace primitive {
